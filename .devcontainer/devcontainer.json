@@ -1,0 +1,15 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [5173, 8000],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspaces/my-blog,type=bind",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/pn/.ssh,readonly,type=bind"
+  ],
+  "remoteUser": "pn"
+}
